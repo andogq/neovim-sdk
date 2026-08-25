@@ -12,6 +12,11 @@ platforms:
   ubuntu@26.04:amd64:
   ubuntu@26.04:arm64:
 
+plugs:
+  nvim-cache:
+    interface: mount
+    workshop-target: /home/workshop/.cache/nvim
+
 parts:
   neovim:
     plugin: nil
