@@ -1,0 +1,25 @@
+name: Build and Upload SDK
+
+on:
+  push:
+    branches:
+      - "[0-9]+.[0-9]+"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-upload:
+    uses: canonical/sdkcraft-actions/.github/workflows/upload.yml@main
+    with:
+      # NOTE: Extra quotes are required until canonical/sdkcraft-actions#7 is closed
+      runs-on: "'ubuntu-latest'"
+      platforms: '["amd64", "arm64"]'
+      risk: "stable"
+      branch: "dev"
+      run-tests: true
+      promote-to-latest: ${{ case(github.ref == format('refs/heads/{0}', vars.LATEST_BRANCH), true, false) }}
+    secrets:
+      SDKCRAFT_STORE_CREDENTIALS: ${{ secrets.SDKCRAFT_STORE_CREDENTIALS }}

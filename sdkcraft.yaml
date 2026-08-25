@@ -1,16 +1,20 @@
 name: neovim
 adopt-info: neovim
-summary: Single-line elevator pitch for your amazing SDK
+summary: The neovim text editor
 description: |
-  This SDK provides a base neovim install.
-license: MIT
+  This SDK provides the Neovim editor and Lua runtime for building and testing
+  Neovim plugins. Neovim caches are persisted on the host to speed up plugin
+  installs across workshop updates. It can also be used as the editing
+  environment inside the workshop.
+license: Apache 2.0
+build-base: ubuntu@26.04
 platforms:
-  ubuntu@22.04:amd64:
-  ubuntu@22.04:arm64:
-  ubuntu@24.04:amd64:
-  ubuntu@24.04:arm64:
-  ubuntu@26.04:amd64:
-  ubuntu@26.04:arm64:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+  arm64:
+    build-on: [amd64]
+    build-for: [arm64]
 
 plugs:
   nvim-cache:
@@ -29,7 +33,7 @@ parts:
           ARCH=x86_64
           ;;
         "arm64")
-          ARM=arm64
+          ARCH=arm64
           ;;
         *)
           echo "unsupported architecture: $CRAFT_ARCH_BUILD_FOR"
