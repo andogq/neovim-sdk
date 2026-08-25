@@ -33,7 +33,7 @@ parts:
           ARCH=x86_64
           ;;
         "arm64")
-          ARM=arm64
+          ARCH=arm64
           ;;
         *)
           echo "unsupported architecture: $CRAFT_ARCH_BUILD_FOR"
