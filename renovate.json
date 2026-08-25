@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "enabledManagers": [
+    "custom.regex"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^VERSION$/"],
+      "matchStrings": [
+        "(?<currentValue>[0-9.]+)"
+      ],
+      "depNameTemplate": "neovim/neovim",
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver"
+    }
+  ],
+  "baseBranchPatterns": [
+    "main"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["neovim/neovim"],
+      "matchBaseBranches": ["main"],
+      "allowedVersions": "/^0\\.12\\./"
+    }
+  ]
+}
