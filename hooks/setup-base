@@ -1,2 +1,3 @@
-# apt-get update
-# apt-get install PACKAGE...
+cat <<EOF > /etc/profile.d/neovim.sh
+export PATH="$SDK/bin:\$PATH"
+EOF

@@ -1,0 +1,5 @@
+if sudo -iu workshop -- nvim -v; then
+    workshopctl set-health okay
+else
+    workshopctl set-health error "nvim binary not found"
+fi

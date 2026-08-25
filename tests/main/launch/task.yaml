@@ -8,7 +8,8 @@ restore: |
   workshop remove || true
 
 execute: |
-  # workshop exec -- neovim-sdk --version
+  workshop exec -- nvim --version
 
 debug: |
-  workshop tasks
+  workshop exec -- printenv PATH || true
+  workshop exec -- ls -la /var/lib/workshop/sdk/neovim
