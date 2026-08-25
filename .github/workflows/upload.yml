@@ -14,6 +14,8 @@ jobs:
   build-and-upload:
     uses: canonical/sdkcraft-actions/.github/workflows/upload.yml@main
     with:
+      # NOTE: Extra quotes are required until canonical/sdkcraft-actions#7 is closed
+      runs-on: "'ubuntu-latest'"
       platforms: '["amd64", "arm64"]'
       risk: "stable"
       branch: "dev"
