@@ -1,0 +1,4 @@
+name: test-neovim-sdk
+base: ${BASE}
+sdks:
+  - name: try-neovim-sdk

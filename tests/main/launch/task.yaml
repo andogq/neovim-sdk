@@ -1,0 +1,14 @@
+summary: Launch workshop with neovim-sdk SDK
+
+prepare: |
+  envsubst '${BASE}' <workshop.yaml.in >workshop.yaml
+  workshop launch
+
+restore: |
+  workshop remove || true
+
+execute: |
+  # workshop exec -- neovim-sdk --version
+
+debug: |
+  workshop tasks

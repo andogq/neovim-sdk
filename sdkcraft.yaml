@@ -1,0 +1,17 @@
+name: neovim-sdk
+version: '0.1'
+summary: Single-line elevator pitch for your amazing SDK
+description: |
+  This SDK provides a base neovim install.
+license: MIT
+platforms:
+  ubuntu@22.04:amd64:
+  ubuntu@22.04:arm64:
+  ubuntu@24.04:amd64:
+  ubuntu@24.04:arm64:
+  ubuntu@26.04:amd64:
+  ubuntu@26.04:arm64:
+
+parts:
+  my-part:
+    plugin: nil
