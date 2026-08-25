@@ -19,12 +19,18 @@
     }
   ],
   "baseBranchPatterns": [
-    "main"
+    "0.11",
+    "0.12"
   ],
   "packageRules": [
     {
       "matchPackageNames": ["neovim/neovim"],
-      "matchBaseBranches": ["main"],
+      "matchBaseBranches": ["0.11"],
+      "allowedVersions": "/^0\\.11\\./"
+    },
+    {
+      "matchPackageNames": ["neovim/neovim"],
+      "matchBaseBranches": ["0.12"],
       "allowedVersions": "/^0\\.12\\./"
     }
   ]
