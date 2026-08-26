@@ -18,7 +18,6 @@ jobs:
       runs-on: "'ubuntu-latest'"
       platforms: '["amd64", "arm64"]'
       risk: "stable"
-      branch: "dev"
       run-tests: true
       promote-to-latest: ${{ case(github.ref == format('refs/heads/{0}', vars.LATEST_BRANCH), true, false) }}
     secrets:
